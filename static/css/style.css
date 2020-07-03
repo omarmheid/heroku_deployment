@@ -1,0 +1,125 @@
+
+.box_size {
+  min-height: 200px;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  color: #000000;
+}
+
+/* Sliders numbers */
+.form-group {
+	position: relative;
+	margin: 0 auto 3rem;
+  }
+  .form-control-range {
+	width: 100%;
+  }
+  .bubble {
+	background: #2c3e50;
+	color: white;
+	padding: 4px 12px;
+	position: absolute;
+	border-radius: 4px;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 50px;
+  }
+  .bubble::after {
+	content: "";
+	position: absolute;
+	width: 2px;
+	height: 2px;
+	background: #2c3e50;
+	top: -2px;
+	left: 46%;
+  }
+  
+  body {
+	margin: 2rem;
+  }
+
+  $shade-10: #2c3e50 !default;
+$shade-1: #d7dcdf !default;
+$shade-0: #fff !default;
+$teal: #1abc9c !default;
+
+/* Visualization - Color Palette */
+/* .bg_redish {
+  background: #ff5345;
+}
+.bg_orange {
+  background: #ffb55a;
+}
+.bg_pink {
+  background: #f8dabf;
+}
+
+.bg_green {
+  background: #b7d124;
+}
+
+.bg_gray {
+  background: #e4e4e4;
+} */
+
+/* Page Color Palette */
+
+/* .bg_dr_blue {
+  background-color: #357cbf;
+}
+
+.bg_lgt_blue {
+  background-color: rgb(167 164 223);
+}
+
+.bg_slgt_blue {
+  background-color: rgb(217 224 234);
+}
+
+.bg_off_white {
+  background-color: rgb(248 248 246);
+}
+
+.bg_lgt_gray {
+  background-color: rgb(217 218 217);
+} */
+
+
+/* sidebar and title */
+
+/* html,
+body,
+main.container {
+	height: 100%;
+}
+
+main.container {
+	display: table;
+	width: 100%;
+	margin-top: -50px;
+	padding: 0;
+	/*set left/right padding according to needs*/
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+main .row {
+	height: 100%;
+	display: table-row;
+}
+
+main .sidebar {
+	display: table-cell;
+	width: 200px;
+	background: #383435;
+	color: #aaa;
+	padding-top: 80px;
+}
+
+main .content {
+	display: table-cell;
+	vertical-align: top;
+	padding-left: 10px;
+	padding-top: 80px;
+} */ */

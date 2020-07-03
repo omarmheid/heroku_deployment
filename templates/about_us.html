@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Our Team</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bring in our bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- CSS - Style -->
+    <link rel="stylesheet" type="text/css" href="/static/css/map_style.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+</head>
+
+<!-- Body -->
+
+<body>
+    <!-- Page -->
+    <div class="container-fluid">
+
+        <!-- Navbar -->
+        <div class="row">
+            <div class="shadow fixed-top mx-2">
+                <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="bg-light">
+                        <nav class="navbar navbar-expand navbar-light bg-light">
+                            <div class="collapse navbar-collapse" id="navbarResponsive">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="/">The Project</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="/project3">Project 3</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                      <a class="nav-link" href="/the_team">The Team
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                    </li>
+                                  </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <nav class="navbar navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">The Unconventionalists</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- End of Navbar Component -->
+
+        <!-- header -->
+        <header class="masthead_background">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-12">
+                    <h5 id="header" class="display-2">About Our Team</h5>
+                    <p id="sub_title">
+                        "The
+                        <em class="text-warning">strength</em>
+                        of the
+                        <em class="text-warning">team</em>
+                        is
+                        <em class="text-warning">each individual member</em>
+                        . The
+                        <em class="text-warning">strength</em>
+                        of
+                        <em class="text-warning">each member</em>
+                        is the
+                        <em class="text-warning">team</em>
+                        ." – Phil Jackson
+                    </p>
+                </div>
+            </div>
+        </header>
+        <!-- End of the Header Component -->
+
+
+        <main>
+            <!-- About Page section -->
+            <section>
+                <div id="the_page" class="row align-items-center row_groups">
+                    <div class="col-md-8 text_groups">
+                        <h5 class="sub">About this page</h5>
+                        <!-- <h5>The key elements of Happiness and where to find them.</h5> -->
+                        <p>This page contains the names of the team members involved in creating the entire happiness
+                            project. The project includes a user interface component
+                            where a user can rank countries based on their own weights for 4 categories (Social,
+                            Financial, Mobility and Physical factors)
+                            and a machine learning component which analyses the 2019 World Happiness Report data to
+                            predict common characteristics among the countries. It was the
+                            entire team's effort that made the entire project successful.
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="../static/Images/team_image.png" class="img-fluid image_box" alt="The Team">
+                    </div>
+                </div>
+            </section>
+            <!-- The end of About Page section -->
+            <!-- Member's Section -->
+            <section>
+                <div class="row row_odd">
+                    <div class="col-md-4 text_groups">
+                        <section>
+                            <h4>Feel free to click on each member's name below to view the member's LinkedIn page where
+                                you can learn more about the member:</h4>
+                        </section>
+                        <section text-align=center>
+                            <h5><a id="profile_link" href="https://www.linkedin.com/in/anishaa-nuwani-de-silva-5079a9141/" target="_blank">Anishaa De Silva</a></h5>
+                            <hr>
+                            <h5><a id="profile_link" href="https://www.linkedin.com/in/joseph-geglia-54aa9b31" target="_blank">Joseph Geglia</a></h5>
+                            <hr>
+                            <h5><a id="profile_link" href="" target="_blank">Farid Hanna</a></h5>
+                            <hr>
+                            <h5><a id="profile_link" href="https://www.linkedin.com/in/omarmheid/" target="_blank">Omar Mheid</a></h5>
+                            <hr>
+                            <h5><a id="profile_link" href="https://www.linkedin.com/in/mcooliver/" target="_blank">Marcio Oliver</a></h5>
+                        </section>
+            </section>
+            <!-- End of Member's Section -->
+        </main>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark">
+            
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            <hr>
+            <a href="https://bit.ly/378uWWT" class="text-reset" target="_blank" >
+                <strong>George Washington University Data Analytics Boot Camp</strong></a>  - Class 2020
+        </div>
+        <!-- Copyright -->
+        
+    </footer>
+    <!-- Footer -->
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../static/js/map_config.js"></script>
+    <!-- LinkedIn -->
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <!-- <script type="text/javascript" src="../static/js/map_logic.js"></script> -->
+
+    <script type="text/javascript" src="../static/js/main.js"></script>
+</body>
+
+</html>

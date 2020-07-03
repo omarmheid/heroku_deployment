@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>The Happiness Index</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bring in our bootstrap stylesheet -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <!-- Bringing leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+
+  <!-- Bringing in leaflet for Choropleth -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin="" />
+
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
+  <!-- D3 -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <!-- Leaflet Choroplet Javascript -->
+  <script type="text/javascript" src="static/js/choropleth.js"></script>
+
+  <!-- CSS - Style -->
+  <link rel="stylesheet" type="text/css" href="/static/css/map_style.css" />
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+</head>
+
+<!-- Body -->
+
+<body>
+  <!-- Page -->
+  <div class="container-fluid">
+
+    <!-- Navbar -->
+    <div class="row">
+      <div class="shadow fixed-top mx-2">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-light">
+            <nav class="navbar navbar-expand navbar-light bg-light">
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/">The Project
+                      <span class="sr-only">(current)</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/project3">Project 3</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/the_team">The Team</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <nav class="navbar navbar-light bg-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#">The Unconventionalists</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- End of Navbar Component -->
+
+    <!-- header -->
+    <header class="masthead">
+      <div class="row h-100 align-items-center">
+        <div class="col-md-12">
+          <h1 id="header" class="display-2">The Happiness Index</h1>
+          <p id="sub_title">More than simply positive mood, <em class="text-warning">happiness</em> is a state of
+            well-being that encompasses <em class="text-warning">living a good life</em>, one with a <em
+              class="text-warning">sense of meaning and deep contentment</em>.</p>
+        </div>
+      </div>
+    </header>
+    <!-- End of the Header Component -->
+
+
+    <main>
+      <!-- The Project section -->
+      <section>
+        <div id="the_project" class="row align-items-center row_groups">
+          <div class="col-md-8 text_groups">
+            <h1 class="sub">The Project</h1>
+            <h5>The key elements of Happiness and where to find them.</h5>
+            <p>Happiness is a difficult thing to measure, but maybe you can take a journey with us and we will help you
+              find a country that might give you a better chance at finding happiness.</p>
+            <p>This website lets you choose between four different elements of happiness that we believe are an
+              integral part of a balanced and happy life. If at the end of visiting our website you decide to move to
+              the
+              country of choice, remember that country was calling for you.</p>
+            </p>
+          </div>
+          <div class="col-md-4">
+            <img src="../static/Images/girlinwoods_circle-500x500.png" class="img-fluid image_box" alt="Logo">
+          </div>
+        </div>
+
+      </section>
+      <!-- The end of The Project section -->
+      <hr>
+      <section>
+        <!-- Elements of Happiness section -->
+        <div id="Hap_anchor" class="row align-items-center row_groups">
+          <div class="col-md-8">
+            <h1>The 5 Elements of happiness in the human mind.</h1>
+            <p>Carl Jung in an interview with Gordon Young was asked about the basic elements or factors for happiness
+              in
+              the human mind. Jung answered with these five elements:
+            </p>
+            <div class="list">
+              <ol>
+                <li>Good physical and mental health.</li>
+                <li>Good personal and intimate relationships.</li>
+                <li>The faculty for perceiving beauty and nature.</li>
+                <li>Reasonable standards of living and satisfactory work.</li>
+                <li>A philosophic or religious point of view capable of coping successfully with the vicissitudes of
+                  life.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="../static/Images/Balance_rocks.jpeg" class="img-fluid rounded-circle image_box" alt="Logo">
+          </div>
+        </div>
+        <div class="row row_groups">
+          <h1>The 4 Groups to Measure Happinness</h1>
+          <p>
+            We grouped those elements into four broad categories and collected 16 indicators from many countries around
+            theworld. The following interactive sliders will allow you as a user to select the degree of importance each
+            of these elements play a part in your life. Then we will surprise you with a country that suites your need
+            for
+            travel or to live in. There we are confident you find people who will be happy to see you.
+          </p>
+        </div>
+        <!-- End of Elements of Happiness section -->
+      </section>
+      <hr>
+      <section>
+        <!-- Social Well-Being + Sliders section -->
+        <div class="row row_odd">
+          <div class="col-md-6 text_groups">
+            <h1 class=>Social Well-Being</h1>
+            <h5>Societal happiness .</h5>
+            <p>
+              Country indicators in this groupe, analyzes GDP per capita, the literacy rate, the
+              suicide rate, and the birth rate per 1,000 or crude birth rate.
+            </p>
+            <p>Go ahead use the range slider to indicate how important those factors are to you when choosing a country.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <form class="sliders">
+              <div class="form-group">
+                <label for="soc_birthrate_cbr">Social Well-Being</label>
+                <input type="range" min="0" max="10" step="1" class="form-control-range" id="soc_birthrate_cbr">
+                <output class="bubble"></output>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- End of Social Well-Being + Sliders section -->
+      </section>
+      <hr>
+      <section>
+        <!-- Financial Well-Being + Sliders section -->
+        <div class="row row_groups">
+          <div class="col-md-6">
+            <h1>Financial Well-Being</h1>
+            <h5>Work Satisfaction and More.</h5>
+            <p> Country indicators in this grouped analyzes of types of industries the population is engaged in. We
+              analyzed the work force by country and collected information on the percent of the work force that is
+              engaged in agriculture, service industry, manufacturing industry and self-employment.
+            </p>
+            <p>Go ahead use the range slider to indicate which workforce type you would like to see in a country.</p>
+          </div>
+          <div class="col-md-6">
+            <form class="sliders">
+              <div class="form-group">
+                <label for="eco_self_employed">Financial Well-Being</label>
+                <input type="range" class="form-control-range" id="eco_self_employed" min="0" max="10">
+                <output class="bubble"></output>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- End of Financial Well-Being section -->
+      </section>
+      <hr>
+      <section>
+        <!-- Mobility Well-Being + Sliders section -->
+        <div class="row row_odd">
+          <div class="col-md-6">
+            <h1>Mobility Well-Being</h1>
+            <h5>Perceiving beauty and nature around you.</h5>
+            <p>Country indicators in this group are all about travelling and seeing beauty all around you. We selected
+              indicators that show the percent growth of in country travel, the number of airport arrivals, the percent
+              of
+              coasline per square line and finally population density per sequare line.
+            </p>
+            <p>Go ahead use the range slider to indicate your preference for what is important to you when considering a
+              country to live or play in.</p>
+          </div>
+          <div class="col-md-6">
+            <form class="sliders">
+              <div class="form-group">
+                <label for="travel_no_of_arrivals">Mobility Well-Being</label>
+                <input type="range" class="form-control-range" min="0" max="10" id="travel_no_of_arrivals">
+                <output class="bubble"></output>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- End of Mobility Well-Being + Sliders section -->
+      </section>
+      <hr>
+      <section>
+        <!-- Community Well-Being + Sliders section -->
+        <div class="row row_groups">
+          <div class="col-md-6">
+            <h1>Physical Well-Being</h1>
+            <h5>Where and who we live with makes you happy.</h5>
+            <p>In this group of indicators, we focused on the living conditions of the population within a country. We
+              selected the types of
+              household as a Percentage of all households by country. Those indicators are made up of the percent of the
+              population
+              that is female, the average size of the household, percent of individual who are living with a
+              nuclear family and finally the percent of household that do not live with children.
+            </p>
+            <p>Go ahead use the range slider to indicate your preference for what is important to you when considering a
+              country population household living arrangement and percent of females.</p>
+          </div>
+          <div class="col-md-6">
+            <form class="sliders">
+              <div class="form-group">
+                <label for="pop_householdtype_nochildren">Physical Well-Being</label>
+                <input type="range" class="form-control-range" min="0" max="10" id="pop_householdtype_nochildren">
+                <output class="bubble"></output>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- End of Physical Well-Being + Sliders section -->
+      </section>
+      <hr>
+      <!-- Button -->
+      <section>
+        <div id="res_anchor" class="row">
+          <div class="align-items-center">
+            <h1 style="text-align: center; padding-left: 230px; padding-right: 230px;">Find the result</h1>
+            <p style="text-align: center; padding-left: 230px; padding-right: 230px;">Now that you have made your
+              amazing choices of what is important
+              to you and we have selected a country for you, go ahead click the link to find out more about it.
+            </p>
+            <button id="button" type="button" class="btn btn-dark">Enter</button>
+          </div>
+        </div>
+      </section>
+      <!-- End of the Button section -->
+      <hr>
+
+      <!-- Button Return -->
+
+      <!-- What country is for you + map section -->
+      <section>
+        <div class="row map">
+          <!-- Map -->
+          <div class="col-md-7">
+
+            <div id="map" style="height:400px; width:100%"></div>
+
+            <!-- Key -->
+            <!-- End of Map Component -->
+          </div>
+
+          <div class="col-md-5">
+            <h1>Find the top Country for You!</h1>
+
+            <!-- Wiki Search -->
+
+            <section class="searchResults"></section>
+
+          </div>
+        </div>
+      </section>
+      <br>
+      <hr>
+      <!-- End of What country is for you + map section -->
+
+      <section>
+        <div class="row-md-12">
+          <h1 class="center">The top 5 countries for You!</h1>
+          <h5 class="center">The Happiness you want is waiting for you.</h5>
+          <ol id="summary" class="center"></ol>
+          <li></li>
+        </div>
+      </section>
+    </main>
+  </div>
+  <!-- Footer -->
+  <footer class="page-footer font-small unique-color-dark">
+            
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">
+        <hr>
+        <a href="https://bit.ly/378uWWT" class="text-reset" target="_blank" >
+            <strong>George Washington University Data Analytics Boot Camp</strong></a>  - Class 2020
+    </div>
+    <!-- Copyright -->
+    
+</footer>
+<!-- Footer -->
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../static/js/map_config.js"></script>
+  <!-- Create a map object -->
+  <!-- <script type="text/javascript" src="../static/js/map_logic.js"></script> -->
+
+  <script type="text/javascript" src="../static/js/main.js"></script>
+</body>
+
+</html>

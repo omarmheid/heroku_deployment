@@ -1,0 +1,30 @@
+/* remove default margin and padding from body */
+  
+  /* Set the */
+  #map,
+  body,
+  html {
+    height: 150%;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+
+  .masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('../Images/boat_sea_view_from_above_water_119937_1920x1080.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .masthead_background {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('../Images/Background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }

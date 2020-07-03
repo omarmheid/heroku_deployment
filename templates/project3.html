@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>The Happiness Report </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bring in our bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <!-- Bringing leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- CSS - Style -->
+    <link rel="stylesheet" type="text/css" href="/static/css/map_style.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+</head>
+
+<!-- Body -->
+
+<body>
+    <!-- Page -->
+    <div class="container-fluid">
+
+        <!-- Navbar -->
+        <div class="row">
+            <div class="shadow fixed-top mx-2">
+                <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="bg-light">
+                        <nav class="navbar navbar-expand navbar-light bg-light">
+                            <div class="collapse navbar-collapse" id="navbarResponsive">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/">The Project</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="/project3">Project 3
+                                            <span class="sr-only">(current)</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/the_team">The Team</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <nav class="navbar navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">The Unconventionalists</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- End of Navbar Component -->
+
+
+        <main>
+            <!-- The Project section -->
+            <section>
+                <div id="the_project" class="row align-items-center">
+                    <div class="col-md-7 text_groups">
+                        <h1 class="sub">The Project</h1>
+                        <h5>Happiness Report Maps</h5>
+                        <p>After listening to you we wanted to explore what other people have to say about happiness.
+                            We wanted to understand to what degree happiness can be categorized. If you are able to
+                            break down elements of happiness, will all of them be created equal? We found the most
+                            widely used and reputable measure of happiness by country; we then used k-means clustering
+                            to try and see if any of the factors that were measured had an outsized effect on a
+                            country's overall happiness score. </p>
+
+                        <p>We used the <a href="https://en.wikipedia.org/wiki/World_Happiness_Report" class="text-reset"
+                                target="_blank"><strong>World Happiness Report</strong></a>. It is an annual
+                            publication of the <a href="https://www.unsdsn.org" class="text-reset"
+                                target="_blank"><strong>United Nations Sustainable Development Solutions Network</strong></a>.
+                            It contains articles, and rankings of national happiness based on respondent ratings of their own 
+                            lives, which the report also correlates with various life factors.
+                            As of March 2020, Finland was ranked the happiest country in the world three times in a row.
+                            The World Happiness Report contained a listing of 156 countries with an overall score ranking and a
+                            happiness rating by countries.</p>
+
+                        <p>Of all the factors within the dataset in the <a href="https://worldhappiness.report/ed/2019/"
+                                class="text-reset" target="_blank"><strong>2019 World Happiness report</strong></a> used
+                            to calculate the overall happiness score, we believe one or more factors has a larger impact on the overall
+                            happiness than the other factors.</p>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="static/Images/Happiness.png" class="img-fluid image_box" alt="Image TBD">
+                    </div>
+                </div>
+
+            </section>
+            <!-- The end of The Project section -->
+            <section>
+                <!-- Index section -->
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <h1>The Index</h1>
+                        <h5>Factors</h5>
+                        <p>The 6 variables provided in the data set are:</p>
+                        <div class="list">
+                            <ol>
+                                <li><strong>GDP per capita:</strong> Purchasing Power Parity (PPP)</li>
+                                <li><strong>Healthy Life Expectancy:</strong> Time series of healthy life expectancy
+                                </li>
+                                <li><strong>Support:</strong> National average of the binary responses to the Gallup
+                                    World Poll (GWP) question</li>
+                                <li><strong>Freedom:</strong> Freedom to make life choices</li>
+                                <li><strong>Generosity:</strong> Money donated to a charity in the past month</li>
+                                <li><strong>Corruption:</strong> Perceptions of corruption</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <!-- End of Index section -->
+                <!-- Why is Importat section -->
+                <div class="row-md-12 row_groups">
+                    <div class="card card-image" style="background-image: url(static/Images/holi_2020_cover_1583817007024.jpg); background-position: center; background-size:cover;">
+                        <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+                          <div class="py-5" style="background-color: rgba(0, 0, 0, 0.7);">
+                  
+                            <!-- Content -->
+                            <h1>Why This is Important</h1>
+                            <h5 class="text-warning">MANIFESTO</h5>
+                            <p>If you talk to someone long enough you know that happiness is subjective, at least after a point,
+                                if you talk further this can lead to arguments. If you continue to argue you will either leave
+                                heated and angry or you will reconcile with the other person and look to what you both see as
+                                equally important to each of your feelings of happiness.</p>
+        
+                            <p>In that agreement you might find the ideas expressed in the data gathered. This will not cover
+                                what makes everyone happy in a specific place but it is a good source on what people around the
+                                world can agree on makes them happy when they’re ready to stop yelling.</p>
+        
+                            <p>Commonalities are important for the present but further analysis can help us take what it
+                                gathered and look towards the future. If there’s a factor that has a greater effect on a country’s
+                                happiness then it stands to reason that’s a good area to focus for others.</p>
+                  
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="row-md-12 row_groups">
+                    <h1>The Data</h1>
+                    <h5>How did we find the data?</h5>
+                    <p>We didn't find it on our own. A little bird told us about it. Seriously though, in our initial
+                        project where we created our own happiness index we looked for other attempts and measured
+                        happiness by country. This dataset came up frequently.</p>
+                    <h5>The data set analysis</h5>
+                    <p>We reviewed the data set 6 variables and determined that there were no obvious ways that we can
+                        distinguish groups through manual inspection and there were no explicit labels within the data
+                        that provide logical groupings. We then utilized Tableau K-means clustering to discover patterns
+                        in our data set and chose groupings based on 4 clusters. Tableau clustering then divided the
+                        population into subgroups based on shared characteristics (see images below).</p>
+                    <p>We further grouped the happiness ranking of the data set into 4 distinct quadrants. The table
+                        below shows the grouping labels and ranking. We added the label of the grouped happy rank on top of
+                        the cluster to determine if there is a logical grouping of the variable around the ranking.</p>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 pb-5">
+                        <table class="table table-striped table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Overall Country Happy Rank</th>
+                                    <th scope="col">Percent</th>
+                                    <th scope="col">Label</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1-39</th>
+                                    <td>25%</td>
+                                    <td>Highest Ranks</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">40-78</th>
+                                    <td>25%</td>
+                                    <td>Mid-higher Ranks</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">79-117</th>
+                                    <td>25%</td>
+                                    <td>Mid-Lower Ranks</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">118-156</th>
+                                    <td>25%</td>
+                                    <td>Lowest Ranks</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <!-- Insert here Tableau  -->
+            <section>
+                <div class="row-md-12">
+                    <h1>The Data Source</h1>
+                    <h5>World Happiness Report</h5>
+                    <p>This map displays the happiness ranks from the 2019 World Happiness Report categorized
+                        into 4 groups of roughly 40 countries each (Highest Ranks, Mid-Higher Ranks, Mid-Lower
+                        Ranks, and Lowest Ranks). This is a baseline map to explore where the countries lie based on
+                        the report’s happiness score.</p>
+                    <br>
+                    <div class='tableauPlaceholder' id='viz1591548946274' style='position: relative'><noscript><a
+                                href='#'><img alt=' '
+                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-Map1&#47;HappyIndexMap&#47;1_rss.png'
+                                    style='border: none' /></a></noscript><object class='tableauViz'
+                            style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='embed_code_version' value='3' />
+                            <param name='site_root' value='' />
+                            <param name='name' value='Project3-Map1&#47;HappyIndexMap' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image'
+                                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-Map1&#47;HappyIndexMap&#47;1.png' />
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' /></object>
+                    </div>
+                    <script type='text/javascript'>
+                        var divElement = document.getElementById('viz1591548946274');
+                        var vizElement = divElement.getElementsByTagName('object')[0];
+                        vizElement.style.width = '100%';
+                        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                        var scriptElement = document.createElement('script');
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                    </script>
+                </div>
+            </section>
+            <hr>
+            <!-- Insert here Tableau  -->
+            <section>
+                <div class="row-md-12 row_groups">
+                    <h1>The Analysis</h1>
+                    <h5>The Clusters created through K-Means using the GDP per capita criteria</h5>
+                </div>
+                <div class="row-md-12">
+                    <div class='tableauPlaceholder' id='viz1591549326672' style='position: relative'><noscript><a
+                                href='#'><img alt=' '
+                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-GDPScatter&#47;ClusterswithGDPHighlighted&#47;1_rss.png'
+                                    style='border: none' /></a></noscript><object class='tableauViz'
+                            style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='embed_code_version' value='3' />
+                            <param name='site_root' value='' />
+                            <param name='name' value='Project3-GDPScatter&#47;ClusterswithGDPHighlighted' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image'
+                                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-GDPScatter&#47;ClusterswithGDPHighlighted&#47;1.png' />
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' /></object></div>
+                    <script type='text/javascript'>
+                        var divElement = document.getElementById('viz1591549326672');
+                        var vizElement = divElement.getElementsByTagName('object')[0];
+                        vizElement.style.width = '100%';
+                        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                        var scriptElement = document.createElement('script');
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                    </script>
+                    <div class="row-md-12 row_groups">
+
+                        <p>The above scatter plot shows the clusters created through K-Means clustering with respect to
+                            GDP per Capita. This graph explores each country's happiness score to their respective GDP per Capita based
+                            on each cluster. It is evident that each cluster represents high happiness score, moderate happiness score
+                            and least happiness score associated with generally high GDP per Capita, a mixture of high and low GDP per Capita
+                            and generally low GDP per Capita, respectively.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <!-- Insert here Tableau  -->
+            <section>
+                <div class="row-md-12 row_groups">
+                    <h5>The Clusters created through K-Means using the generosity criteria</h5>
+                </div>
+                <div class="row-md-12">
+                    <div class='tableauPlaceholder' id='viz1591567335031' style='position: relative'><noscript><a
+                                href='#'><img alt=' '
+                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-GenerosityGraph&#47;ClusterswithGenerosity&#47;1_rss.png'
+                                    style='border: none' /></a></noscript><object class='tableauViz'
+                            style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='embed_code_version' value='3' />
+                            <param name='site_root' value='' />
+                            <param name='name' value='Project3-GenerosityGraph&#47;ClusterswithGenerosity' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image'
+                                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-GenerosityGraph&#47;ClusterswithGenerosity&#47;1.png' />
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' /></object></div>
+                    <script type='text/javascript'>
+                        var divElement = document.getElementById('viz1591567335031');
+                        var vizElement = divElement.getElementsByTagName('object')[0];
+                        vizElement.style.width = '100%';
+                        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                        var scriptElement = document.createElement('script');
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                    </script>
+                    <div class="row-md-12 row_groups">
+
+                        <p>The above scatter plot shows the clusters created through K-Means clustering with respect to
+                            Generosity. This graph explores each country's happiness score to their respective generosity based
+                            on each cluster. It is evident that each of the clusters does not have a clear representation based on
+                            generosity. It shows that generosity is generally low across the three clusters of happiness score
+                            suggesting that the report's 156 countries represent less generosity. Ultimately, this shows that generosity
+                            does not impact the happiness score as much as the GDP per Capita.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <!-- Insert here Tableau  -->
+            <section>
+                <div class="row-md-12 row_groups">
+                    <h5>The Clusters created through K-Means using the perception of corruption criteria</h5>
+                </div>
+                <div class="row-md-12">
+                    <div class='tableauPlaceholder' id='viz1591567511965' style='position: relative'><noscript><a
+                                href='#'><img alt=' '
+                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-Corruption&#47;ClusterswithPercepofCorruption&#47;1_rss.png'
+                                    style='border: none' /></a></noscript><object class='tableauViz'
+                            style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                            <param name='embed_code_version' value='3' />
+                            <param name='site_root' value='' />
+                            <param name='name' value='Project3-Corruption&#47;ClusterswithPercepofCorruption' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image'
+                                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-Corruption&#47;ClusterswithPercepofCorruption&#47;1.png' />
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' /></object></div>
+                    <script type='text/javascript'>
+                        var divElement = document.getElementById('viz1591567511965');
+                        var vizElement = divElement.getElementsByTagName('object')[0];
+                        vizElement.style.width = '100%';
+                        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                        var scriptElement = document.createElement('script');
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+                    </script>
+                    <div class="row-md-12 row_groups">
+
+                        <p>The above scatter plot shows the clusters created through K-Means clustering with respect to
+                            perceptions of happiness.
+                            This graph explores each country's happiness score to their respective perceptions of
+                            happiness based on each cluster. It is evident that the high happiness scores are associated 
+                            with mostly low perceptions of corruption with a few high representations,
+                            whereas the moderate and least happiness scores are associated with generally lower
+                            perceptions of corruption. This graph concludes that happiness score is not as impacted by 
+                            perceptions of corruption as GDP per capita. Additionally, most of the report's 156 countries
+                            tend to have lower perceptions of corruption.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            <hr>
+            <a href="https://bit.ly/378uWWT" class="text-reset" target="_blank">
+                <strong>George Washington University Data Analytics Boot Camp</strong></a> - Class 2020
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../static/js/map_config.js"></script>
+    <!-- Create a map object -->
+    <!-- <script type="text/javascript" src="../static/js/map_logic.js"></script> -->
+
+    <script type="text/javascript" src="../static/js/ML.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+#header {
+  text-align: center;
+  text-transform: uppercase;
+  color: seashell;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.sliders {
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  top: 40%;
+}
+
+#sub_title {
+  min-width: 200px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Lucida Grande";
+  font-weight: lighter;
+  font-size: 140%;
+  background-color: hsla(0, 0%, 0%, 0.2);
+  text-align: center;
+  position: relative;
+  top: 20px;
+  padding: 5px;
+  color: seashell;
+
+}
+
+.group_title {
+  text-align: left;
+  font-family: Helvetica;
+  font-size: large;
+  margin-top: 50px;
+}
+
+.row_groups {
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.map {
+  padding-top: 20px;
+  padding-bottom: 70px;
+}
+
+.row_odd {
+  padding-top: 40px;
+  padding-bottom: 70px;
+  background-color: rgba(7,87,112,0.2);
+}
+
+p{
+  text-align: left;
+  margin: 10px 35px;
+  padding-right: 50px;
+  font-family: Helvetica;
+  font-size: 110%;
+
+}
+
+h1{
+  text-align: left;
+  margin: 20px 30px;
+  padding-right: 90px;
+}
+
+h1.sub {
+  text-align:left;
+  padding-bottom: 0px;
+  padding-right: 250px;
+}
+
+h5 {
+  text-align: left;
+  margin: 20px 35px;
+  padding-right: 100px;
+  color: gray;
+}
+
+ol {
+  margin: 20px 30px;
+  font-weight: 400;
+  margin-right: 220px;
+}
+
+#button {
+  position: relative;
+  left: 47%;
+}
+
+.center {
+  text-align: center;
+  list-style-position: inside;
+}
