@@ -11,9 +11,10 @@ import json
 #################################################
 # Database Setup
 #################################################
+#paste your connection url here
+postgres_connection_url = ""
 
-engine = create_engine(
-    "postgres://marciooliver:@localhost:5432/HappinessData")
+engine = create_engine(postgres_connection_url)
 
 # reflect an existing database into a new model
 Base = automap_base()
